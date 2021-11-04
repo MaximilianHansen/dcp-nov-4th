@@ -1,32 +1,24 @@
 
-const string1 = "()())()"
-const string2 = ")("
-
-const string3 = "((()()("
+const n = 4 
 
 
-function handleString(e) {
-    let chrCount = 0;
-    let text = e;
-    let i = 0
-    while ( i < e.length) {
-        if (text.substr(i, 1) === ")" ) { 
-            chrCount++ ;
-            //console.log(chrCount, i);
-            i++ ;
-        }
-        else {
-            if (text.substr(i+1 , 1) === ")" && i != text.length) {
-                i = i + 2
-            } 
-        else {
-            chrCount++ 
-            //console.log(chrCount, i, "option 3")
-            i++
-        }
-        }
-    } 
-    
-    console.log(`remove ${chrCount}`)
+function handleN(e) {
+    let x = [];
+    x[0] = 1;
+    x[1] = 1
+    let i = 0;
+    let b = 0;
+    while(i < e) {
+        x.push(x[i] + x[i+1]) 
+        i++
+        //console.log(x, "array");
+        //console.log(i, "index")
+    }
+    if(x[e] < 2 ) {
+    console.log(`${x[e]} possible solution`) 
+    }
 
+    else { 
+    console.log(`${x[e]} possible solutions`) 
+    }
 }
